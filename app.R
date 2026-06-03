@@ -74,17 +74,17 @@ ui <- fluidPage(
                           sliderInput(inputId = "intensity", "What percentage would you like to select?",
                                       min = 0, max = 100, step = 5, value = 10),
                           actionButton(inputId = "simulate", "Simulate", class = "btn btn-success")),
-                     card(class = "vh-25", card_header("Recycle a generation for new simulations"),
+                     card(class = "height: 25vh; overflow-y: auto;", card_header("Recycle a generation for new simulations"),
                           sliderInput(inputId = "genNumber", "Select the generation",
                                       min = 1, max = 20, step = 1, value = 4),
                           actionButton(inputId = "recycle", "Recycle"),
                           progressBar(id = "pb", value = 0, display_pct = T, title = "Ready to recycle")),
-                     card(class = "vh-20", card_header("Genetic gain metric"),
+                     card(class = "height: 20vh; overflow-y: auto;", card_header("Genetic gain metric"),
                           sliderInput(inputId = "quantile", "Choose a quartile for comparing generations",
                                       min = 0, max = 100, step = 25, value = 50),
                           actionButton(inputId = "metric", "Update metric")),
-                     card(class = "vh-10", card_header("Reset the app"), 
-                          actionButton(inputId = "reset", "Reset", class = "btn btn-warning"))
+                     card(class = "height: 6vh;", card_header("Reset the app"), 
+                          actionButton(inputId = "reset", "Reset the app", class = "btn btn-warning"))
                  )
                ),
                
@@ -95,7 +95,7 @@ ui <- fluidPage(
                      
                      fluidRow(
                        column(12,
-                              card(class = "height: 40vh; overflow-y: hidden;", card_header("Genetic gain plot"),
+                              card(class = "height: 30vh; overflow-y: auto;", card_header("Genetic gain plot"),
                                    plotOutput(outputId = "dotplot"))
                        )
                      ),
@@ -109,7 +109,7 @@ ui <- fluidPage(
                                                height = canvas.height.gbl, style = "border:1px solid black;"))
                        ),
                        column(4,
-                              card(class = "height: 40vh; overflow-y: hidden;", card_header("Phenotypic distribution"),
+                              card(class = "height: 30vh; overflow-y: hidden;", card_header("Phenotypic distribution"),
                                    selectInput(inputId = "selectGen", label = "Select a generation", choices = c(1:20)),
                                    selectInput(inputId = "selectTrait", label = "Select a trait", choices = unique(SP$traitNames)),
                                    actionButton(inputId = "plotHist", "Plot histogram"),
@@ -168,8 +168,8 @@ ui <- fluidPage(
                           sliderInput(inputId = "quantile2", "Choose a quartile for comparing generations",
                                       min = 0, max = 100, step = 25, value = 50),
                           actionButton(inputId = "metric2", "Update metric")),
-                     card(class = "vh-10", card_header("Reset the app"),
-                          actionButton(inputId = "reset2", "Reset", class = "btn btn-warning"))
+                     card(class = "height: 6vh;", card_header("Reset the app"),
+                          actionButton(inputId = "reset2", "Reset the app", class = "btn btn-warning"))
                  )
                ),
                

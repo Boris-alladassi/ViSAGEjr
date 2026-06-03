@@ -41,3 +41,9 @@ if(!require(ggpubr)){
 if(!require(shinyWidgets)){
   install.packages("shinyWidgets", dependencies = T)
 }
+
+
+## The shinyWidgets package helps to show progress bars
+if(!require(markdown)){
+  install.packages("markdown", dependencies = T)
+}
