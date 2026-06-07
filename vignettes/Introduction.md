@@ -64,7 +64,7 @@ The app has two panels, *Standard* and *Fun*. The Standard panel simulates addit
 
 To run the simulation pipeline in ViSAGE, the user needs to define the trait of interest, selection direction (higher values or lower values), and selection intensity. Once these selection decisions are made, the user runs the simulation by clicking on the ***Simulate*** button.
 
-![Selection decisions](www/Selection_decisions.png)
+![Selection decisions](Selection_decisions.png)
 
 #### Visulization of simulation results
 
@@ -73,25 +73,25 @@ The genetic gain plot shows the temporal trend of the user-defined phenotypic qu
 
 Additionally, the user can visualize the phenotypic distribution of a given trait and generation using the options under the "Phenotypic Distribution" section.
 
-![Histogram of phenotypic distribution](www/Phenotypic_distribution.png)
+![Histogram of phenotypic distribution](Phenotypic_distribution.png)
 
 #### Recycle a Generation
 
 In ViSAGE, selection focuses on one trait at a time. After reaching a desirable value for a trait, the improved individuals, at a given generation, are recycled and used to begin the selection for the next trait.
 
-![Recycling button](www/Recycle_generation.png)
+![Recycling button](Recycle_generation.png)
 
 #### Genetic Gain Metric
 
 The median is the default metric used to visualize the genetic gain trend. The user can change the metric by selecing another quartile and update the metric.
 
-![Slider and button to update genetic gain metric](www/Genetic_gain_metric.png)
+![Slider and button to update genetic gain metric](Genetic_gain_metric.png)
 
 #### Reset the App
 
 The user can reset the app at any time to clear all inputs and restart the app. This option is useful when a user desires to restart current simulation scenario or initiate a new simulation scenario.
 
-![A button to reset the app](www/Reset_app.png)
+![A button to reset the app](Reset_app.png)
 
 ### 3.2. Fun panel
 

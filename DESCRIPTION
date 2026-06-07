@@ -1,0 +1,35 @@
+Package: ViSAGEjr
+Title: Visualization and Simulation for Advancing Genetics Education junior
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+      "Boris Mahule E.", "Alladassi",
+      email = "aboris@illinois.edu",
+      role = c("aut", "cre"), comment = c("0000-0001-9938-2552")
+    ),
+    person(
+      "Alexander Edward", "Lipka",
+      email = "alipka@illinois.edu",
+      role = "aut", comment = c(ORCID = "0000-0003-1571-8528")
+    )
+  )
+Description: ViSAGEjr is an R shiny app developed to use **Vi**sualization and **S**imulation for **A**dvancing **G**enetics **E**ducation. The app simulates selective breeding scenarios based on user-defined inputs. It runs twenty cycles of selection and produces graphs and cartoons for visualizing phenotypic changes across generations.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0
+Imports: 
+    AlphaSimR,
+    bslib,
+    dplyr,
+    ggplot2,
+    ggpubr,
+    shiny,
+    shinyjs,
+    shinyWidgets,
+    tidyr,
+    utils
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

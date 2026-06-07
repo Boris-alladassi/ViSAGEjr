@@ -1,15 +1,15 @@
-# ViSAGE
+# ViSAGEjr
 
-## 1. About ViSAGE
+## 1. About ViSAGEjr
 
-ViSAGE is an R shiny app developed to use **Vi**sualization and **S**imulation for **A**dvancing **G**enetics **E**ducation. The app simulates selective breeding scenarios based on user-defined inputs. It runs twenty cycles of selection and produces graphs and cartoons for visualizing phenotypic changes across generations.
-This document provides instructions on how to install and run ViSAGE. Thanks for using *ViSAGE*!
+ViSAGEjr is an R shiny app developed to use **Vi**sualization and **S**imulation for **A**dvancing **G**enetics **E**ducation. The app simulates selective breeding scenarios based on user-defined inputs. It runs twenty cycles of selection and produces graphs and cartoons for visualizing phenotypic changes across generations.
+This document provides instructions on how to install and run ViSAGEjr. Thanks for using *ViSAGEjr*!
 
-## 2. How to install ViSAGE?
+## 2. How to install ViSAGEjr?
 
 ### 2.1. First install R and RStudio
 
-Installing and running ViSAGE on the local computer requires the installation of R and RStudio.
+Installing and running ViSAGEjr on the local computer requires the installation of R and RStudio.
 To install R, go to the official R website: <https://cran.r-project.org>. Click on the appropriate link for your operating system: "Download R for Windows" or "Download R for macOS".
 Run the downloaded installer and follow the setup instructions (default options are fine).
 
@@ -23,36 +23,36 @@ To download manually, go to the GitHub repository page and click the green “Co
 
 To clone the repository using the command line, open a terminal or command prompt and run:
 
-`git clone https://github.com/Boris-alladassi/ViSAGE.git`
+`git clone https://github.com/Boris-alladassi/ViSAGEjr.git`
 
 This will create a local copy of the repository on your computer. Make sure you have Git installed before using this command.
 
 ### 2.3. Setting working directory
 
-To begin, unzip the folder downloaded, if done properly a new folder will be created named **ViSAGE**. Now, open R or R Studio and set your working directory to this folder **ViSAGE**.\
+To begin, unzip the folder downloaded, if done properly a new folder will be created named **ViSAGEjr**. Now, open R or R Studio and set your working directory to this folder **ViSAGEjr**.\
 You may use the keyboard shortcut `Ctrl+Shift+H` (for Windows, probably `Cmd+Shift+H` for Mac), or you may edit the code below to set the working directory to the relative path where the directory is located on your computer.
 
-`setwd("C:/Users/aboris/Documents/Postdoc/code/ViSAGE")`
+`setwd("C:/Users/aboris/Documents/Postdoc/code/ViSAGEjr")`
 
 ### 2.4. Source the *app.R* file
 
-Next, source the *app.R* file to get **ViSAGE** ready for running. Please use the code below after you have set your working directory to ViSAGE.
+Next, source the *app.R* file to get **ViSAGEjr** ready for running. Please use the code below after you have set your working directory to ViSAGEjr.
 
 `source("./app.R")`
 
 This may take a while, as it will install all the required R packages, that you currently do not have.
 
-### 2.5. Run ViSAGE
+### 2.5. Run ViSAGEjr
 
-**ViSAGE** can now run using the code below.
+**ViSAGEjr** can now run using the code below.
 
 `shiny::runApp()`
 
-At this point, the app should be up running. Please test the app as thoroughly as you can. Explore both the Standard and Fun panels. Record any abnormal behavior and share your feedback and suggestions with me at [**aboris@illinois.edu**](mailto:aboris@illinois.edu)
+At this point, the app should be up running. Please test the app as thoroughly as you can. Explore both the Standard and Fun panels. Record any abnormal behavior and share your feedback and suggestions with us at [**aboris@illinois.edu**](mailto:aboris@illinois.edu) or [**alipka@illinois.edu**](mailto:alipka@illinois.edu).
 
-### 2.6. Alternative access to ViSAGE
+### 2.6. Alternative access to ViSAGEjr
 
-If a user is not able to install and run the app on their local computer, they can access it at <https://borisalladassi.shinyapps.io/visage/>. Simply copy and paste the URL in your browser, and it will start running. **It is worth noting that due to memory limitation, running the app from a the URL is much slower than running it locally.**
+If a user is not able to install and run the app on their local computer, they can access it at <https://borisalladassi.shinyapps.io/visagejr/>. Simply copy and paste the URL in your browser, and it will start running. **It is worth noting that due to memory limitation, running the app from a the URL is much slower than running it locally.**
 
 ## 3. Authors
 

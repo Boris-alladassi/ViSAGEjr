@@ -1,0 +1,19 @@
+---
+title: "Breeding_scenarios"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Breeding_scenarios}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ViSAGEjr)
+```
