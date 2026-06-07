@@ -93,7 +93,6 @@ multi.gener.sim <- function(pop = pop, intensity = 20, direction = "Higher value
 #'
 #' @returns A data frame with summarized values
 #' @noRd
-#'
 summary.simulation <- function(data, quartile = 50, pivot = F){
   summary.dt <- dplyr::group_by(data, Generation) |> 
     dplyr::summarise_at(names(data[,-1]), ~ stats::quantile(., probs = quartile/100)) |> 

@@ -9,8 +9,14 @@
 # saveRDS(founder.pop, "R/Maize.founder.population.preloaded.rds")
 
 ### Adding two negatively correlated traits
+#' Create maize base population
+#'
+#' @returns the base population of maize, an alphaSimR object
+#' @noRd
+#'
 sim_maize_pop <- function(){
-  founder.pop.maize <- readRDS("inst/extdata/Maize.founder.population.preloaded.rds")
+  maize_rds <- system.file("extdata", "Maize.founder.population.preloaded.rds", package = "ViSAGEjr")
+  founder.pop.maize <- readRDS(maize_rds)
   SP <- AlphaSimR::SimParam$new(founder.pop.maize)
   traitcor <- matrix(c(1,-0.5,-0.5, 1), ncol = 2, byrow = T)
   SP$addTraitA(nQtlPerChr = 5, name = c("PlantHeight", "StemDiameter"),
@@ -40,8 +46,14 @@ sim_maize_pop <- function(){
 # # saveRDS(founder.pop, "R/Avocado.founder.population.preloaded.rds")
 
 ### Add the 1st trait, oligogenic and non correlated to other traits
+#' Create avocado base population
+#'
+#' @returns the base population of Avocado, an alphaSimR object
+#' @noRd
+#'
 sim_avocado_pop <- function(){
-  founder.pop.avocado <- readRDS("inst/extdata/Avocado.founder.population.preloaded.rds")
+  avocado_rds <- system.file("extdata", "Avocado.founder.population.preloaded.rds", package = "ViSAGEjr")
+  founder.pop.avocado <- readRDS(avocado_rds)
   SP.avocado <- AlphaSimR::SimParam$new(founder.pop.avocado)
   SP.avocado$addTraitA(nQtlPerChr = 2, name = "FruitWidth",
                        mean = 8, var = 2)
@@ -72,8 +84,14 @@ sim_avocado_pop <- function(){
 
 
 ### Add the 1st trait, oligogenic and non correlated to other traits
+#' Create strawberry base population
+#'
+#' @returns the base population of Strawberry, an alphaSimR object
+#' @noRd
+#'
 sim_strawb_pop<- function(){
-  founder.pop.strawberry <- readRDS("inst/extdata/Strawberry.founder.population.preloaded.rds")
+  strawberry_rds <- system.file("extdata", "Strawberry.founder.population.preloaded.rds", package = "ViSAGEjr")
+  founder.pop.strawberry <- readRDS(strawberry_rds)
   SP.strawberry <- AlphaSimR::SimParam$new(founder.pop.strawberry)
   traitcor.strawberry <- matrix(c(1,0.5,0.5, 1), ncol = 2, byrow = T)
   SP.strawberry$addTraitA(nQtlPerChr = 2, name = c("FruitLength", "FruitWidth"),
@@ -90,9 +108,4 @@ sim_strawb_pop<- function(){
   return(out_lst)
 }
 
-### Set phenotypes by defining heritabilities hence, error Var(e)
-# pop <- setPheno(pop, h2 = c(0.9, 0.7, 0.8)) # Tassel length, height, and StemDiameter
 ###########################################################################################
-#Free some memory
-# rm(list = c("qtl.map", "qtl.map.avocado", "qtl.map.strawberry"))
-gc()

@@ -49,7 +49,8 @@ run_visagejr <- function(){
     
     shiny::tabsetPanel(
       #### Introduction panel ###################
-      shiny::tabPanel("Introduction", shiny::includeMarkdown("vignettes/Introduction.md")
+      shiny::tabPanel("Introduction", shiny::includeMarkdown(
+        system.file("www", "Introduction.md",  package = "ViSAGEjr"))
       ),# End of Introduction panel
       
       ######### Standard panel ####################======================= 
