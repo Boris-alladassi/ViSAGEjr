@@ -1,9 +1,18 @@
-# ViSAGEjr
+---
+title: "Introduction to ViSAGEjr"
+author: "Boris M.E. Alladassi and Alexander E. Lipka"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 ## 1. About ViSAGEjr
 
 ViSAGEjr is an R shiny app developed to use **Vi**sualization and **S**imulation for **A**dvancing **G**enetics **E**ducation. The app simulates selective breeding scenarios based on user-defined inputs. It runs twenty cycles of selection and produces graphs and cartoons for visualizing phenotypic changes across generations.
-This document provides instructions on how to install and run ViSAGEjr. Thanks for using *ViSAGE*!
+This document provides instructions on how to install and run ViSAGEjr. Thanks for using *ViSAGEjr*!
 
 ## 2. How to install ViSAGEjr?
 
@@ -18,25 +27,27 @@ Run the downloaded installer and complete the installation. Finally, open RStudi
 
 ### 2.2. Installing ViSAGEjr as a package
 
-Run the codes below to install the development version of ViSAGEjr from [GitHub](https://github.com/):
+Run the code below to install the development version of ViSAGEjr from [GitHub](https://github.com/):
 
-`install.packages("devtools")`
-
-`devtools::install_github("Boris-alladassi/ViSAGEjr")`
+```{r, eval=FALSE, echo=TRUE}
+install.packages("devtools")
+devtools::install_github("Boris-alladassi/ViSAGEjr")
+```
 
 ### 2.3. Running ViSAGEjr
 
-Once **ViSAGEjr** is installed, you can run the app using the codes below:
+Once **ViSAGEjr** is installed, you can run the app using the code below:
 
-`library(ViSAGEjr)`
+```{r, eval=FALSE, echo=TRUE}
+library(ViSAGEjr)
+ViSAGEjr::run_visagejr()
+```
 
-`ViSAGEjr::run_visagejr()`
+At this point, the app should be up running. Please test the app as thoroughly as you can. Explore both the Standard and Fun panels. Record any abnormal behavior and share your feedback and suggestions with us at [**aboris@illinois.edu**](mailto:aboris@illinois.edu) or [**alipka@illinois.edu**](mailto:alipka@illinois.edu).
 
-At this point, the app should be up running. Please test the app as thoroughly as you can. Explore both the Standard and Fun panels. Record any abnormal behavior and share your feedback and suggestions with me at [**aboris@illinois.edu**](mailto:aboris@illinois.edu)
+### 2.4. Alternative access to ViSAGE
 
-### 2.6. Alternative access to ViSAGE
-
-If a user is not able to install and run the app on their local computer, they can access it at <https://borisalladassi.shinyapps.io/visage/>. Simply copy and paste the URL in your browser, and it will start running. **It is worth noting that due to memory limitation, running the app from a the URL is much slower than running it locally.**  
+If a user is not able to install and run the app on their local computer, they can access it at <https://borisalladassi.shinyapps.io/visagejr/>. Simply copy and paste the URL in your browser, and it will start running. **It is worth noting that due to memory limitation, running the app from a the URL is much slower than running it locally.**  
 
 ## 3. How to use ViSAGEjr?
 
@@ -48,34 +59,48 @@ The app has two panels, *Standard* and *Fun*. The Standard panel simulates addit
 
 To run the simulation pipeline in ViSAGEjr, the user needs to define the trait of interest, selection direction (higher values or lower values), and selection intensity. Once these selection decisions are made, the user runs the simulation by clicking on the ***Simulate*** button.
 
-![Selection decisions](Selection_decisions.png)
+```{r, echo=FALSE, out.width="75%", fig.align='left', fig.cap="Selection decisions"}
+sel_path <- system.file("www", "Selection_decisions.png", package = "ViSAGEjr")
+knitr::include_graphics(sel_path)
+```
 
 #### Visulization of simulation results
 
-The simulation results are visualized in two sections—genetic gain plot and phenotypic changes.
-The genetic gain plot shows the temporal trend of the user-defined phenotypic quartile across the 20 generations. The section of phenotypic changes is an interactive canvas display (powered by JavaScript) that visually reflects phenotypic changes across generations.
+The simulation results are visualized in two sections—genetic gain plot and phenotypic changes. The genetic gain plot shows the temporal trend of the user-defined phenotypic quartile across the 20 generations. The section of phenotypic changes is an interactive canvas display (powered by JavaScript) that visually reflects phenotypic changes across generations.
 
 Additionally, the user can visualize the phenotypic distribution of a given trait and generation using the options under the "Phenotypic Distribution" section.
 
-![Histogram of phenotypic distribution](Phenotypic_distribution.png)
+```{r, echo=FALSE, out.width="75%", fig.align='left', fig.cap="Histogram of phenotypic distribution"}
+hist_path <- system.file("www", "Phenotypic_distribution.png", package = "ViSAGEjr")
+knitr::include_graphics(hist_path)
+```
 
 #### Recycle a Generation
 
 In ViSAGEjr, selection focuses on one trait at a time. After reaching a desirable value for a trait, the improved individuals, at a given generation, are recycled and used to begin the selection for the next trait.
 
-![Recycling button](Recycle_generation.png)
+```{r, echo=FALSE, out.width="75%", fig.align='left', fig.cap="Recycling button"}
+recy_path <- system.file("www", "Recycle_generation.png", package = "ViSAGEjr")
+knitr::include_graphics(recy_path)
+```
 
 #### Genetic Gain Metric
 
 The median is the default metric used to visualize the genetic gain trend. The user can change the metric by selecing another quartile and update the metric.
 
-![Slider and button to update genetic gain metric](Genetic_gain_metric.png)
+```{r, echo=FALSE, out.width="75%", fig.align='left', fig.cap="Slider and button to update genetic gain metric"}
+quantile_path <- system.file("www", "Genetic_gain_metric.png", package = "ViSAGEjr")
+knitr::include_graphics(quantile_path)
+```
 
 #### Reset the App
 
 The user can reset the app at any time to clear all inputs and restart the app. This option is useful when a user desires to restart current simulation scenario or initiate a new simulation scenario.
 
-![A button to reset the app](Reset_app.png)
+```{r, echo=FALSE, out.width="75%", fig.align='left', fig.cap="Reset button of the app"}
+reset_path <- system.file("www", "Reset_app.png", package = "ViSAGEjr")
+knitr::include_graphics(reset_path)
+```
 
 ### 3.2. Fun panel
 

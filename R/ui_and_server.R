@@ -25,6 +25,7 @@ run_visagejr <- function(){
   ######################------- User Interface of the app ---------- #####################################################
   ########################################################################################################################
   ui <- shiny::fluidPage(
+    
     shiny::tags$head(
       shiny::tags$link(rel = "stylesheet", type = "text/css", href = "www/layout.css")
       ),
@@ -49,9 +50,12 @@ run_visagejr <- function(){
     
     shiny::tabsetPanel(
       #### Introduction panel ###################
-      shiny::tabPanel("Introduction", shiny::includeMarkdown(
-        system.file("www", "Introduction.md",  package = "ViSAGEjr"))
-      ),# End of Introduction panel
+      shiny::tabPanel("Introduction",
+        shiny::tags$iframe(src = "www/Introduction_ViSAGEjr.html",
+          width = "100%",
+          height = "900px",
+          style = "border:none;"
+        )), # End of Introduction panel
       
       ######### Standard panel ####################======================= 
       shiny::tabPanel("Standard", 
