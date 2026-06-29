@@ -320,7 +320,7 @@ run_visagejr <- function(){
       ggplot2::ggplot( data = dplyr::filter(simulation.results()[["pheno"]], Generation == input$selectGen),
                        mapping = ggplot2::aes(x = .data[[input$selectTrait]])) +
         ggplot2::geom_histogram(color = "white", fill = "steelblue", bins = 10) +
-        ggplot2::labs(x = base::paste0(input$selectTrait, " (cm)"), y = "Count",
+        ggplot2::labs(x = base::paste0(input$selectTrait), y = "Count",
                       title = base::paste0("Histogram for ",input$selectTrait," at generation ",input$selectGen)) +
         boris_theme() +
         ggplot2::theme(panel.grid = ggplot2::element_line(), title = ggplot2::element_text(size = 14))
@@ -349,7 +349,7 @@ run_visagejr <- function(){
       ggplot2::ggplot(data = dplyr::filter(simulation.results2()[["pheno"]], Generation == input$selectGen2),
                       mapping = ggplot2::aes(x = .data[[input$selectTrait3]])) +
         ggplot2::geom_histogram(color = "white", fill = "steelblue", bins = 10) +
-        ggplot2::labs(x = base::paste0(input$selectTrait3, " (cm)"),
+        ggplot2::labs(x = base::paste0(input$selectTrait3),
                       y = "Count", title = base::paste0("Histogram for ", input$selectTrait3,
                                                         " at generation ", input$selectGen2)) +
         boris_theme() +
@@ -601,8 +601,6 @@ run_visagejr <- function(){
     })
     ##########################---------- RESET APP---------##################################
     shiny::observeEvent(input$reset, {
-      rm(list = ls())
-      source("R/Load_shiny_simulation_parameters.R")
       session$reload()
     })
     
