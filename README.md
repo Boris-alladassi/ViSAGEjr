@@ -16,43 +16,27 @@ Run the downloaded installer and follow the setup instructions (default options 
 To install RStudio, go to the RStudio download page: <https://posit.co/download/rstudio-desktop/>. Scroll down to the RStudio Desktop and click the download link for your operating system (Windows or macOS).
 Run the downloaded installer and complete the installation. Finally, open RStudio from your applications, and it should automatically detect R installation.
 
-### 2.2. Downloading the app
+### 2.2. Installing ViSAGEjr as a package
 
-The repository can be downloaded manually from GitHub or cloned from the command line.
-To download manually, go to the GitHub repository page and click the green “Code” button, then select “Download ZIP”. After downloading, unzip the folder to access the files.
+Run the code below to install the development version of ViSAGEjr from [GitHub](https://github.com/):
 
-To clone the repository using the command line, open a terminal or command prompt and run:
+```install.packages("devtools")```
 
-`git clone https://github.com/Boris-alladassi/ViSAGEjr.git`
+```devtools::install_github("Boris-alladassi/ViSAGEjr")```
 
-This will create a local copy of the repository on your computer. Make sure you have Git installed before using this command.
+### 2.3. Running ViSAGEjr
 
-### 2.3. Setting working directory
+Once **ViSAGEjr** is installed, you can run the app using the code below:
 
-To begin, unzip the folder downloaded, if done properly a new folder will be created named **ViSAGEjr**. Now, open R or R Studio and set your working directory to this folder **ViSAGEjr**.\
-You may use the keyboard shortcut `Ctrl+Shift+H` (for Windows, probably `Cmd+Shift+H` for Mac), or you may edit the code below to set the working directory to the relative path where the directory is located on your computer.
+```library(ViSAGEjr)```
 
-`setwd("C:/Users/aboris/Documents/Postdoc/code/ViSAGEjr")`
-
-### 2.4. Source the *app.R* file
-
-Next, source the *app.R* file to get **ViSAGEjr** ready for running. Please use the code below after you have set your working directory to ViSAGEjr.
-
-`source("./app.R")`
-
-This may take a while, as it will install all the required R packages, that you currently do not have.
-
-### 2.5. Run ViSAGEjr
-
-**ViSAGEjr** can now run using the code below.
-
-`shiny::runApp()`
+```ViSAGEjr::run_visagejr()```
 
 At this point, the app should be up running. Please test the app as thoroughly as you can. Explore both the Standard and Fun panels. Record any abnormal behavior and share your feedback and suggestions with us at [**aboris@illinois.edu**](mailto:aboris@illinois.edu) or [**alipka@illinois.edu**](mailto:alipka@illinois.edu).
 
-### 2.6. Alternative access to ViSAGEjr
+### 2.4. Alternative access to ViSAGE
 
-If a user is not able to install and run the app on their local computer, they can access it at <https://borisalladassi.shinyapps.io/visagejr/>. Simply copy and paste the URL in your browser, and it will start running. **It is worth noting that due to memory limitation, running the app from a the URL is much slower than running it locally.**
+If a user is not able to install and run the app on their local computer, they can access it at <https://borisalladassi.shinyapps.io/visagejr/>. Simply copy and paste the URL in your browser, and it will start running. **It is worth noting that due to memory limitation, running the app from a the URL is much slower than running it locally.**  
 
 ## 3. Authors
 
